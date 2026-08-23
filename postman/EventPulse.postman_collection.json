@@ -1,0 +1,3172 @@
+{
+  "info": {
+    "_postman_id": "21dc6586-fc1f-473e-8cf7-534e42e303ed",
+    "name": "EventPulse",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54629954",
+    "_collection_link": "https://go.postman.co/collection/54629954-21dc6586-fc1f-473e-8cf7-534e42e303ed?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"yara\",\r\n    \"email\": \"yara@gmail.com\",\r\n    \"password\": \"pAssW2ord\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/register",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "201 Created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Ahmed\",\r\n    \"email\": \"ahmed@gmail.com\",\r\n    \"password\": \"veryStrongPassword\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/auth/register",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "387"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"183-e6uW3FvaU+XArVGGgRxNSpaCX/k\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 17:30:16 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Success\",\n    \"message\": \"User has registered successfully.\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YThiMmUyNzgwYTQyM2E2MjdjZjVmNTQiLCJyb2xlIjoiYXR0ZW5kZWUiLCJpYXQiOjE3ODc1MDYyMTYsImV4cCI6MTc4ODExMTAxNn0.CLB1aFE2VSxbP5_uWhKwAsWrFCyz_29BiPiDF_uv88Q\",\n        \"user\": {\n            \"_id\": \"6a8b2e2780a423a627cf5f54\",\n            \"name\": \"Ahmed\",\n            \"email\": \"ahmed@gmail.com\",\n            \"role\": \"attendee\"\n        }\n    }\n}"
+            },
+            {
+              "name": "422  Unprocessable Entity",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Yara\",\r\n    \"email\": \"yara\",\r\n    \"password\": \"pAssW2ord\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/auth/register",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "status": "Unprocessable Entity",
+              "code": 422,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "146"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"92-QNoW7juulhORgwDiHpRK+oUxu/4\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 17:36:53 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"yara\",\n            \"msg\": \"Please, enter the email in the right format.\",\n            \"path\": \"email\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+            },
+            {
+              "name": "400 Bad Request",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Yara\",\r\n    \"email\": \"ahmed@gmail.com\",\r\n    \"password\": \"pAssW2ord\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/auth/register",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "57"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"39-VLPs7fvQi6/gmDRycFq5IOlustM\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 17:38:29 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"message\": \"Email is already registered\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"Alex@gmail.com\",\r\n    \"password\": \"Alexbirthday123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\": \"ahmed@gmail.com\",\r\n    \"password\": \"veryStrongPassword\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/auth/login",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "285"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"11d-U6T2idkQ5cT9xqF5ehv8hM2Icho\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 17:41:17 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Success\",\n    \"message\": \"User has logged in successfully.\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YThiMmUyNzgwYTQyM2E2MjdjZjVmNTQiLCJyb2xlIjoiYXR0ZW5kZWUiLCJpYXQiOjE3ODc1MDY4NzcsImV4cCI6MTc4ODExMTY3N30.no7ktKpb1268fE3ewf0V4OeerfZozvx-Ecmg4fEITug\"\n    }\n}"
+            },
+            {
+              "name": "401 Unauthorized",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\": \"ahmed@gmail.com\",\r\n    \"password\": \"password\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/auth/login",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "56"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"38-ngn9SQoMvbdufOifKRHby/ZfK4Q\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 17:41:51 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"message\": \"Invalid email or password.\"\n}"
+            },
+            {
+              "name": "422 Unprocessable Entity",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"password\": \"password\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/auth/login",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "status": "Unprocessable Entity",
+              "code": 422,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "236"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"ec-DJnXABbLZR/tV0U7leeRx7cZUCM\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 17:42:21 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Please, enter the email.\",\n            \"path\": \"email\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Please, enter the email in the right format.\",\n            \"path\": \"email\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Events",
+      "item": [
+        {
+          "name": "GET events",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/events",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "events"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/events",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "2971"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"b9b-Kr/5zbqpt766fdC9YJ0ylyoT33Q\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 17:46:09 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Success\",\n    \"message\": \"Successful Operation\",\n    \"data\": {\n        \"total\": 8,\n        \"page\": 1,\n        \"limit\": 5,\n        \"totalPages\": 2,\n        \"data\": [\n            {\n                \"_id\": \"6a8b31d2dbee6be13d8a4090\",\n                \"title\": \"Electric Nights\",\n                \"description\": \"Enjoy the best music in the best music event!\",\n                \"category\": {\n                    \"_id\": \"6a8b31d0dbee6be13d8a408c\",\n                    \"name\": \"Music\",\n                    \"description\": \"Feel the music like you never did before!\",\n                    \"createdAt\": \"2026-08-23T17:45:52.906Z\",\n                    \"updatedAt\": \"2026-08-23T17:45:52.906Z\",\n                    \"__v\": 0\n                },\n                \"date\": \"2026-08-10T00:00:00.000Z\",\n                \"city\": \"Newyork\",\n                \"venue\": \"Central Park Arena\",\n                \"capacity\": 400,\n                \"organizer\": \"6a8b31d0dbee6be13d8a408a\",\n                \"registrations\": 387,\n                \"createdAt\": \"2026-08-23T17:45:54.479Z\",\n                \"updatedAt\": \"2026-08-23T17:45:54.479Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"6a8b31d2dbee6be13d8a4093\",\n                \"title\": \"Marathon of Cairo\",\n                \"description\": \"Run as fast as you can and strenghen yourself!\",\n                \"category\": {\n                    \"_id\": \"6a8b31d0dbee6be13d8a408e\",\n                    \"name\": \"Sports\",\n                    \"description\": \"Become active and join some wonderful activites!\",\n                    \"createdAt\": \"2026-08-23T17:45:52.906Z\",\n                    \"updatedAt\": \"2026-08-23T17:45:52.906Z\",\n                    \"__v\": 0\n                },\n                \"date\": \"2026-08-23T00:00:00.000Z\",\n                \"city\": \"Cairo\",\n                \"venue\": \"Cairo Sports Club\",\n                \"capacity\": 1220,\n                \"organizer\": \"6a8b31d0dbee6be13d8a408a\",\n                \"registrations\": 623,\n                \"createdAt\": \"2026-08-23T17:45:54.479Z\",\n                \"updatedAt\": \"2026-08-23T17:45:54.479Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"6a8b31d2dbee6be13d8a4095\",\n                \"title\": \"AI Conference\",\n                \"description\": \"Dive deeper into AI and discover new information!\",\n                \"category\": {\n                    \"_id\": \"6a8b31d0dbee6be13d8a408d\",\n                    \"name\": \"Tech\",\n                    \"description\": \"Level up your brain with some modern technology!\",\n                    \"createdAt\": \"2026-08-23T17:45:52.906Z\",\n                    \"updatedAt\": \"2026-08-23T17:45:52.906Z\",\n                    \"__v\": 0\n                },\n                \"date\": \"2026-09-02T00:00:00.000Z\",\n                \"city\": \"Giza\",\n                \"venue\": \"Smart Village Hall\",\n                \"capacity\": 700,\n                \"organizer\": \"6a8b31d0dbee6be13d8a408b\",\n                \"registrations\": 492,\n                \"createdAt\": \"2026-08-23T17:45:54.479Z\",\n                \"updatedAt\": \"2026-08-23T17:45:54.479Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"6a8b31d2dbee6be13d8a4092\",\n                \"title\": \"Geek Speak\",\n                \"description\": \"Meet up with professional developers and develope new soft-skills!\",\n                \"category\": {\n                    \"_id\": \"6a8b31d0dbee6be13d8a408d\",\n                    \"name\": \"Tech\",\n                    \"description\": \"Level up your brain with some modern technology!\",\n                    \"createdAt\": \"2026-08-23T17:45:52.906Z\",\n                    \"updatedAt\": \"2026-08-23T17:45:52.906Z\",\n                    \"__v\": 0\n                },\n                \"date\": \"2026-09-07T00:00:00.000Z\",\n                \"city\": \"Paris\",\n                \"venue\": \"Grand Tech Hall\",\n                \"capacity\": 300,\n                \"organizer\": \"6a8b31d0dbee6be13d8a408b\",\n                \"registrations\": 176,\n                \"createdAt\": \"2026-08-23T17:45:54.479Z\",\n                \"updatedAt\": \"2026-08-23T17:45:54.479Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"6a8b31d2dbee6be13d8a4096\",\n                \"title\": \"Code Day\",\n                \"description\": \"Join us to build websites together!\",\n                \"category\": {\n                    \"_id\": \"6a8b31d0dbee6be13d8a408d\",\n                    \"name\": \"Tech\",\n                    \"description\": \"Level up your brain with some modern technology!\",\n                    \"createdAt\": \"2026-08-23T17:45:52.906Z\",\n                    \"updatedAt\": \"2026-08-23T17:45:52.906Z\",\n                    \"__v\": 0\n                },\n                \"date\": \"2026-09-15T00:00:00.000Z\",\n                \"city\": \"Cairo\",\n                \"venue\": \"Downtown Tech Hub\",\n                \"capacity\": 100,\n                \"organizer\": \"6a8b31d0dbee6be13d8a408a\",\n                \"registrations\": 76,\n                \"createdAt\": \"2026-08-23T17:45:54.479Z\",\n                \"updatedAt\": \"2026-08-23T17:45:54.479Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
+            },
+            {
+              "name": "200 OK (Filtered)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/events?page=1&limit=5&search=Marathon&city=Cairo&sortBy=date&order=asc",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "5"
+                    },
+                    {
+                      "key": "search",
+                      "value": "Marathon"
+                    },
+                    {
+                      "key": "city",
+                      "value": "Cairo"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "date"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "692"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2b4-lfRd7E3lORLPZTh72jmGclI2U3M\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 17:49:38 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Success\",\n    \"message\": \"Successful Operation\",\n    \"data\": {\n        \"total\": 1,\n        \"page\": 1,\n        \"limit\": 5,\n        \"totalPages\": 1,\n        \"data\": [\n            {\n                \"_id\": \"6a8b31d2dbee6be13d8a4093\",\n                \"title\": \"Marathon of Cairo\",\n                \"description\": \"Run as fast as you can and strenghen yourself!\",\n                \"category\": {\n                    \"_id\": \"6a8b31d0dbee6be13d8a408e\",\n                    \"name\": \"Sports\",\n                    \"description\": \"Become active and join some wonderful activites!\",\n                    \"createdAt\": \"2026-08-23T17:45:52.906Z\",\n                    \"updatedAt\": \"2026-08-23T17:45:52.906Z\",\n                    \"__v\": 0\n                },\n                \"date\": \"2026-08-23T00:00:00.000Z\",\n                \"city\": \"Cairo\",\n                \"venue\": \"Cairo Sports Club\",\n                \"capacity\": 1220,\n                \"organizer\": \"6a8b31d0dbee6be13d8a408a\",\n                \"registrations\": 623,\n                \"createdAt\": \"2026-08-23T17:45:54.479Z\",\n                \"updatedAt\": \"2026-08-23T17:45:54.479Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "GET an event",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/events/6a8b31d2dbee6be13d8a409f",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "events",
+                "6a8b31d2dbee6be13d8a409f"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/events/6a8b31d2dbee6be13d8a4090",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events",
+                    "6a8b31d2dbee6be13d8a4090"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "786"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"312-mX9qsXcGNeHM4oXrVPUZEdc7AkA\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 17:51:22 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Success\",\n    \"message\": \"Successful Operation\",\n    \"data\": {\n        \"event\": {\n            \"_id\": \"6a8b31d2dbee6be13d8a4090\",\n            \"title\": \"Electric Nights\",\n            \"description\": \"Enjoy the best music in the best music event!\",\n            \"category\": {\n                \"_id\": \"6a8b31d0dbee6be13d8a408c\",\n                \"name\": \"Music\",\n                \"description\": \"Feel the music like you never did before!\",\n                \"createdAt\": \"2026-08-23T17:45:52.906Z\",\n                \"updatedAt\": \"2026-08-23T17:45:52.906Z\",\n                \"__v\": 0\n            },\n            \"date\": \"2026-08-10T00:00:00.000Z\",\n            \"city\": \"Newyork\",\n            \"venue\": \"Central Park Arena\",\n            \"capacity\": 400,\n            \"organizer\": {\n                \"_id\": \"6a8b31d0dbee6be13d8a408a\",\n                \"name\": \"Alex\",\n                \"email\": \"alex@gmail.com\",\n                \"role\": \"admin\",\n                \"createdAt\": \"2026-08-23T17:45:52.723Z\",\n                \"updatedAt\": \"2026-08-23T17:45:52.723Z\",\n                \"__v\": 0\n            },\n            \"registrations\": 387,\n            \"createdAt\": \"2026-08-23T17:45:54.479Z\",\n            \"updatedAt\": \"2026-08-23T17:45:54.479Z\",\n            \"__v\": 0\n        }\n    }\n}"
+            },
+            {
+              "name": "400 Bad Request",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/events/6a8b31d2dbee6be13d8a409",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events",
+                    "6a8b31d2dbee6be13d8a409"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "47"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2f-42ZW1q84L0RrIUoiKKC6Z4zjJjI\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 17:51:46 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"message\": \"Error: Invalid ID\"\n}"
+            },
+            {
+              "name": "404 Not Found",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/events/6a8b31d2dbee6be13d8a409f",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events",
+                    "6a8b31d2dbee6be13d8a409f"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "75"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"4b-D/6r4edkV0l9NAo3j/AAKg86xgM\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 17:52:19 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"message\": \"The event you were looking for was not found.\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "POST an event",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{adminToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Food Event\",\r\n    \"description\": \"Enjoy this amazing food event!\",\r\n    \"category\": \"6a8b31d0dbee6be13d8a408f\",\r\n    \"date\": \"2026-10-16\",\r\n    \"venue\": \"Food Hub\",\r\n    \"city\": \"New York\",\r\n    \"capacity\": 120\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/events",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "events"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "401 Unauthorized",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"Food Event\",\r\n    \"description\": \"Enjoy this amazing food event!\",\r\n    \"category\": \"6a8b31d0dbee6be13d8a408f\",\r\n    \"date\": \"2026-10-16\",\r\n    \"venue\": \"Food Hub\",\r\n    \"city\": \"New York\",\r\n    \"capacity\": 120\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/events",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "72"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"48-4Btb3GOulvNo3JgukUe012uaWCs\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 17:57:33 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"message\": \"You must be logged in to access this route\"\n}"
+            },
+            {
+              "name": "403 Forbidden",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"Food Event\",\r\n    \"description\": \"Enjoy this amazing food event!\",\r\n    \"category\": \"6a8b31d0dbee6be13d8a408f\",\r\n    \"date\": \"2026-10-16\",\r\n    \"venue\": \"Food Hub\",\r\n    \"city\": \"New York\",\r\n    \"capacity\": 120\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/events",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events"
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "75"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"4b-SW7LzcLMe1mGJvcGaT8F5FvFUhk\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 17:59:02 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"message\": \"You do not have permission to do this action.\"\n}"
+            },
+            {
+              "name": "201 Created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"Food Event\",\r\n    \"description\": \"Enjoy this amazing food event!\",\r\n    \"category\": \"6a8b31d0dbee6be13d8a408f\",\r\n    \"date\": \"2026-10-16\",\r\n    \"venue\": \"Food Hub\",\r\n    \"city\": \"New York\",\r\n    \"capacity\": 120\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/events",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "441"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1b9-z/eemiR2PQ6xBGL7vexm463I/WE\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 17:59:45 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Success\",\n    \"message\": \"Successful Operation.\",\n    \"data\": {\n        \"event\": {\n            \"title\": \"Food Event\",\n            \"description\": \"Enjoy this amazing food event!\",\n            \"category\": \"6a8b31d0dbee6be13d8a408f\",\n            \"date\": \"2026-10-16T00:00:00.000Z\",\n            \"city\": \"New York\",\n            \"venue\": \"Food Hub\",\n            \"capacity\": 120,\n            \"organizer\": \"6a8b31d0dbee6be13d8a408a\",\n            \"registrations\": 0,\n            \"_id\": \"6a8b3511803b4827450652ff\",\n            \"createdAt\": \"2026-08-23T17:59:45.468Z\",\n            \"updatedAt\": \"2026-08-23T17:59:45.468Z\",\n            \"__v\": 0\n        }\n    }\n}"
+            },
+            {
+              "name": "422 Unprocessable Entity",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/events",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events"
+                  ]
+                }
+              },
+              "status": "Unprocessable Entity",
+              "code": 422,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1081"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"439-fCc6KZ4RxgfFLzg55/cxc3Sk5z0\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:00:30 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Please, enter the title.\",\n            \"path\": \"title\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Please, enter the description.\",\n            \"path\": \"description\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Please, enter the category ID.\",\n            \"path\": \"category\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"The category must be a valid Mongo ID.\",\n            \"path\": \"category\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Please, enter the date of the event.\",\n            \"path\": \"date\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Please, enter a valid date.\",\n            \"path\": \"date\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Please, enter a date that is in the future.\",\n            \"path\": \"date\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Please, enter the city.\",\n            \"path\": \"city\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Please, enter the venue.\",\n            \"path\": \"venue\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Please, enter capacity of the event.\",\n            \"path\": \"capacity\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Capacity must be a positive number.\",\n            \"path\": \"capacity\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "PATCH a event",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{adminToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"I changed this event's title!\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/events/6a8b31d2dbee6bf13d8a4093",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "events",
+                "6a8b31d2dbee6bf13d8a4093"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "401 Unauthorized",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"I changed this event's title!\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/events/6a8b31d2dbee6be13d8a4093",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events",
+                    "6a8b31d2dbee6be13d8a4093"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "72"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"48-4Btb3GOulvNo3JgukUe012uaWCs\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:03:00 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"message\": \"You must be logged in to access this route\"\n}"
+            },
+            {
+              "name": "403 Forbidden",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"I changed this event's title!\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/events/6a8b31d2dbee6be13d8a4093",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events",
+                    "6a8b31d2dbee6be13d8a4093"
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "75"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"4b-SW7LzcLMe1mGJvcGaT8F5FvFUhk\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:04:16 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"message\": \"You do not have permission to do this action.\"\n}"
+            },
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"I changed this event's title!\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/events/6a8b31d2dbee6be13d8a4093",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events",
+                    "6a8b31d2dbee6be13d8a4093"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "807"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"327-vcF6zomG31r1NlqLsWSFyOzlx4A\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:04:59 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Success\",\n    \"message\": \"Successful Operation\",\n    \"data\": {\n        \"event\": {\n            \"_id\": \"6a8b31d2dbee6be13d8a4093\",\n            \"title\": \"I changed this event's title!\",\n            \"description\": \"Run as fast as you can and strenghen yourself!\",\n            \"category\": {\n                \"_id\": \"6a8b31d0dbee6be13d8a408e\",\n                \"name\": \"Sports\",\n                \"description\": \"Become active and join some wonderful activites!\",\n                \"createdAt\": \"2026-08-23T17:45:52.906Z\",\n                \"updatedAt\": \"2026-08-23T17:45:52.906Z\",\n                \"__v\": 0\n            },\n            \"date\": \"2026-08-23T00:00:00.000Z\",\n            \"city\": \"Cairo\",\n            \"venue\": \"Cairo Sports Club\",\n            \"capacity\": 1220,\n            \"organizer\": {\n                \"_id\": \"6a8b31d0dbee6be13d8a408a\",\n                \"name\": \"Alex\",\n                \"email\": \"alex@gmail.com\",\n                \"role\": \"admin\",\n                \"createdAt\": \"2026-08-23T17:45:52.723Z\",\n                \"updatedAt\": \"2026-08-23T17:45:52.723Z\",\n                \"__v\": 0\n            },\n            \"registrations\": 623,\n            \"createdAt\": \"2026-08-23T17:45:54.479Z\",\n            \"updatedAt\": \"2026-08-23T18:04:58.775Z\",\n            \"__v\": 0\n        }\n    }\n}"
+            },
+            {
+              "name": "422 Unprocessable Entity",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"I changed this event's title!\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/events/6a8b31d2dbee6be13d8a409",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events",
+                    "6a8b31d2dbee6be13d8a409"
+                  ]
+                }
+              },
+              "status": "Unprocessable Entity",
+              "code": 422,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "171"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"ab-vhIsxao7MsCpje4bZuI2tYBkK5s\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:05:18 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"6a8b31d2dbee6be13d8a409\",\n            \"msg\": \"The event ID you were trying to update was invalid.\",\n            \"path\": \"id\",\n            \"location\": \"params\"\n        }\n    ]\n}"
+            },
+            {
+              "name": "404 Not Found",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"I changed this event's title!\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/events/6a8b31d2dbee6bf13d8a4093",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events",
+                    "6a8b31d2dbee6bf13d8a4093"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "80"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"50-iXwq27VA4Qr/RFSg+DgsdWPxBeM\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:05:53 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"message\": \"The event you were trying to update was not found.\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "DELETE an event",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{adminToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/events/6a8b31d2dbee6be13d8a4096",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "events",
+                "6a8b31d2dbee6be13d8a4096"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "401 Unauthorized",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/events/6a8b31d2dbee6be13d8a4093",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events",
+                    "6a8b31d2dbee6be13d8a4093"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "72"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"48-4Btb3GOulvNo3JgukUe012uaWCs\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:07:23 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"message\": \"You must be logged in to access this route\"\n}"
+            },
+            {
+              "name": "403 Forbidden",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/events/6a8b31d2dbee6be13d8a4093",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events",
+                    "6a8b31d2dbee6be13d8a4093"
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "75"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"4b-SW7LzcLMe1mGJvcGaT8F5FvFUhk\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:07:55 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"message\": \"You do not have permission to do this action.\"\n}"
+            },
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/events/6a8b31d2dbee6be13d8a4092",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events",
+                    "6a8b31d2dbee6be13d8a4092"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "66"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"42-/fTzzQoLbcZCo8CqnoCw4hiEPMA\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:10:28 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Success\",\n    \"message\": \"Successful Operation.\",\n    \"data\": null\n}"
+            },
+            {
+              "name": "404 Not Found",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/events/6a8b31d2dbee6be11d8a4092",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events",
+                    "6a8b31d2dbee6be11d8a4092"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "80"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"50-bM/iv6L+Gvx9uFkR6utiB1xIgv8\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:10:50 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"message\": \"The event you were trying to delete was not found.\"\n}"
+            },
+            {
+              "name": "400 Bad Request",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/events/6a8b31d2dbee6be11d8a409",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events",
+                    "6a8b31d2dbee6be11d8a409"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "47"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2f-42ZW1q84L0RrIUoiKKC6Z4zjJjI\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:11:05 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"message\": \"Error: Invalid ID\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Registrations",
+      "item": [
+        {
+          "name": "POST a registration",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{   \r\n    \"event\": \"6a8b31d2dbee6be13d8a4097\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/registrations",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "registrations"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "401 Unauthorized",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{   \r\n    \"event\": \"6a8afd2f5a8608c7535caf52\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/registrations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "registrations"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "72"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"48-4Btb3GOulvNo3JgukUe012uaWCs\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:12:51 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"message\": \"You must be logged in to access this route\"\n}"
+            },
+            {
+              "name": "201 Created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{   \r\n    \"event\": \"6a8b31d2dbee6be13d8a4097\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/registrations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "registrations"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "271"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"10f-aObBBNjzVIzvFc4Rt0Ve+CTsBK4\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:14:09 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Success\",\n    \"message\": \"Attendee has registered successfully.\",\n    \"data\": {\n        \"attendee\": \"6a8b2e2780a423a627cf5f54\",\n        \"event\": \"6a8b31d2dbee6be13d8a4097\",\n        \"_id\": \"6a8b3871ffc0a01ced8f490a\",\n        \"createdAt\": \"2026-08-23T18:14:09.207Z\",\n        \"updatedAt\": \"2026-08-23T18:14:09.207Z\",\n        \"__v\": 0\n    }\n}"
+            },
+            {
+              "name": "422 Unprocessable Entity",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{   \r\n    \"event\": \"6a8b31d2dbee6be13d8a409\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/registrations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "registrations"
+                  ]
+                }
+              },
+              "status": "Unprocessable Entity",
+              "code": 422,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "158"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"9e-DTH9NU9CmZtP6bYWYEFkefMg7J4\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:14:25 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"6a8b31d2dbee6be13d8a409\",\n            \"msg\": \"The eventId must be a valid Mongo ID.\",\n            \"path\": \"event\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+            },
+            {
+              "name": "404 Not Found",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{   \r\n    \"event\": \"6a8b31d2dbee6be13d8a409f\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/registrations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "registrations"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "86"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"56-MqaauIbJrY68MzNzKDFMjneZpIw\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:14:42 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"message\": \"The event you were trying to register for was not found.\"\n}"
+            },
+            {
+              "name": "400 Bad Request",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{   \r\n    \"event\": \"6a8b31d2dbee6be13d8a4097\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/registrations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "registrations"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "68"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"44-00Ib0hZ8UpoFoXBvnOeRQAJmejo\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:15:11 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"message\": \"You already registered for this event.\"\n}"
+            },
+            {
+              "name": "400 Bad Request (full event)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{   \r\n    \"event\": \"6a8b31d2dbee6be13d8a4094\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/registrations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "registrations"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "49"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"31-MAz8Fw1k5YDHKQJuhhxz2wYZG+U\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:17:06 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"message\": \"This event is full.\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "GET my registrations",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/registrations/my",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "registrations",
+                "my"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "401 Unauthorized",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/registrations/my",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "registrations",
+                    "my"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "72"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"48-4Btb3GOulvNo3JgukUe012uaWCs\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:17:49 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"message\": \"You must be logged in to access this route\"\n}"
+            },
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/registrations/my",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "registrations",
+                    "my"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "623"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"26f-rte8OpV1q80roUoH2AmIHig1DA8\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:18:15 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Success\",\n    \"message\": \"Successful Operation\",\n    \"data\": [\n        {\n            \"_id\": \"6a8b3871ffc0a01ced8f490a\",\n            \"attendee\": \"6a8b2e2780a423a627cf5f54\",\n            \"event\": {\n                \"_id\": \"6a8b31d2dbee6be13d8a4097\",\n                \"title\": \"Music Fest\",\n                \"description\": \"Join this live music concert with local bands!\",\n                \"category\": \"6a8b31d0dbee6be13d8a408c\",\n                \"date\": \"2026-09-28T00:00:00.000Z\",\n                \"city\": \"Paris\",\n                \"venue\": \"City Music Hall\",\n                \"capacity\": 2300,\n                \"organizer\": \"6a8b31d0dbee6be13d8a408b\",\n                \"registrations\": 2191,\n                \"createdAt\": \"2026-08-23T17:45:54.479Z\",\n                \"updatedAt\": \"2026-08-23T18:14:09.358Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2026-08-23T18:14:09.207Z\",\n            \"updatedAt\": \"2026-08-23T18:14:09.207Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "DELETE a registration",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/registrations/6a8b3a4effc0a01ced8f490b",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "registrations",
+                "6a8b3a4effc0a01ced8f490b"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "401 Unauthorized",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/registrations/6a8b3871ffc0a01ced8f490a",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "registrations",
+                    "6a8b3871ffc0a01ced8f490a"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "72"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"48-4Btb3GOulvNo3JgukUe012uaWCs\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:20:07 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"message\": \"You must be logged in to access this route\"\n}"
+            },
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/registrations/6a8b3871ffc0a01ced8f490a",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "registrations",
+                    "6a8b3871ffc0a01ced8f490a"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "80"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"50-szbizHFZ/h74rHfnd5KgNz1pEvo\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:20:24 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Success\",\n    \"message\": \"Registration cancelled successfully\",\n    \"data\": null\n}"
+            },
+            {
+              "name": "400 Bad Request",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/registrations/6a8b3871ffc0a01ced8f490",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "registrations",
+                    "6a8b3871ffc0a01ced8f490"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "47"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2f-42ZW1q84L0RrIUoiKKC6Z4zjJjI\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:20:40 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"message\": \"Error: Invalid ID\"\n}"
+            },
+            {
+              "name": "404 Not Found",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/registrations/6a8b3871ffc0a01ced8f490f",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "registrations",
+                    "6a8b3871ffc0a01ced8f490f"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "87"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"57-cs255MRa0wijQHFoLTHf6T9PGQs\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:20:55 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"message\": \"The registration you were trying to cancel was not found.\"\n}"
+            },
+            {
+              "name": "403 Forbidden",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/registrations/6a8b3a4effc0a01ced8f490b",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "registrations",
+                    "6a8b3a4effc0a01ced8f490b"
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "72"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"48-W07b8v20Sr94lgD1Qc2XaiA4E8Q\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:22:47 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"message\": \"You can only cancel your own registration.\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Announcements",
+      "item": [
+        {
+          "name": "POST an announcement",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{adminToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"eventId\": \"6a8b31d2dbee6be13d8a409f\",\r\n  \"text\": \"Event starting in 5 minutes!\"\r\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/announcements",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "announcements"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "401 Unauthorized",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"eventId\": \"6a8b31d2dbee6be13d8a4097\",\r\n  \"text\": \"Event starting in 5 minutes!\"\r\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/announcements",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "announcements"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "72"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"48-4Btb3GOulvNo3JgukUe012uaWCs\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:26:34 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"message\": \"You must be logged in to access this route\"\n}"
+            },
+            {
+              "name": "403 Forbidden",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"eventId\": \"6a8b31d2dbee6be13d8a4097\",\r\n  \"text\": \"Event starting in 5 minutes!\"\r\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/announcements",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "announcements"
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "75"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"4b-SW7LzcLMe1mGJvcGaT8F5FvFUhk\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:27:05 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"message\": \"You do not have permission to do this action.\"\n}"
+            },
+            {
+              "name": "201 Created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"eventId\": \"6a8b31d2dbee6be13d8a4097\",\r\n  \"text\": \"Event starting in 5 minutes!\"\r\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/announcements",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "announcements"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "337"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"151-P9EiPl90FBXfaZS+oBLbMBxoDd0\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:27:34 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Success\",\n    \"message\": \"Successful Operation\",\n    \"data\": {\n        \"sender\": {\n            \"_id\": \"6a8b31d0dbee6be13d8a408a\",\n            \"name\": \"Alex\",\n            \"email\": \"alex@gmail.com\"\n        },\n        \"event\": \"6a8b31d2dbee6be13d8a4097\",\n        \"text\": \"Event starting in 5 minutes!\",\n        \"_id\": \"6a8b3b95ffc0a01ced8f490c\",\n        \"createdAt\": \"2026-08-23T18:27:33.659Z\",\n        \"updatedAt\": \"2026-08-23T18:27:33.659Z\",\n        \"__v\": 0\n    }\n}"
+            },
+            {
+              "name": "422 Unprocessable Entity",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/announcements",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "announcements"
+                  ]
+                }
+              },
+              "status": "Unprocessable Entity",
+              "code": 422,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "305"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"131-Msz3zFIYRgsRmpWH56Mjn3z5gM0\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:27:49 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"msg\": \"Please, enter the eventId.\",\n            \"path\": \"eventId\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"The eventId must be a valid Mongo ID.\",\n            \"path\": \"eventId\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Please, enter the text.\",\n            \"path\": \"text\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+            },
+            {
+              "name": "404 Not Found",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"eventId\": \"6a8b31d2dbee6be13d8a409f\",\r\n  \"text\": \"Event starting in 5 minutes!\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/announcements",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "announcements"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "97"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"61-t2/+ySYr1K8Zwj03VgARGf2rso4\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:32:26 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"message\": \"The event you were trying to make an announcement for was not found\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "GET announcements of an event",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/announcements/6a8b31d2dbee6be13d8a4097",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "announcements",
+                "6a8b31d2dbee6be13d8a4097"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/announcements/6a8b31d2dbee6be13d8a4097",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "announcements",
+                    "6a8b31d2dbee6be13d8a4097"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "339"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"153-SYxD8h9rllzEogUH/Fofhjjyouk\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:31:27 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Success\",\n    \"message\": \"Successful Operation\",\n    \"data\": [\n        {\n            \"_id\": \"6a8b3b95ffc0a01ced8f490c\",\n            \"sender\": {\n                \"_id\": \"6a8b31d0dbee6be13d8a408a\",\n                \"name\": \"Alex\",\n                \"email\": \"alex@gmail.com\"\n            },\n            \"event\": \"6a8b31d2dbee6be13d8a4097\",\n            \"text\": \"Event starting in 5 minutes!\",\n            \"createdAt\": \"2026-08-23T18:27:33.659Z\",\n            \"updatedAt\": \"2026-08-23T18:27:33.659Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            },
+            {
+              "name": "400 Bad Request",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/announcements/6a8b31d2dbee6be13d8a409",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "announcements",
+                    "6a8b31d2dbee6be13d8a409"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "47"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2f-42ZW1q84L0RrIUoiKKC6Z4zjJjI\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:31:45 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"message\": \"Error: Invalid ID\"\n}"
+            },
+            {
+              "name": "404 Not Found",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/announcements/6a8b31d2dbee6be13d8a409f",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "announcements",
+                    "6a8b31d2dbee6be13d8a409f"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "90"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"5a-DiMtdp6ynCjOwdeG9ERC2pUDrJY\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 23 Aug 2026 18:32:03 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Fail\",\n    \"message\": \"The event you were trying to find messages for was not found\"\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}
