@@ -83,7 +83,7 @@ router.get('/my', requireAuth, registerControllers.getAllUserRegistrations);
  *       401:
  *         description: You must be logged in to access this route
  *       403:
- *         description: You can only cancel your own registration
+ *         description: You can only cancel your own registration.
  *       404:
  *         description: The registration you were trying to cancel was not found.
  *       500:
