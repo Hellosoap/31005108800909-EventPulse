@@ -51,8 +51,17 @@ app.use('/api/events', eventRoutes);
 app.use('/api/registrations', registerRoutes)
 app.use('/api/announcements', announcementsRoutes)
 
-app.get('/health', (req, res) => {
+app.get('/health', async (req, res) => {
+    try {
+        if (mongoose.connection.readyState !== 1) {
+            await mongoose.connect(process.env.MONGO_URL || config.mongoUrl);
+        }
+    } catch (err) {
+        console.error('Health check DB connection error:', err);
+    }
+
     const connectionStatus = mongoose.connection.readyState === 1 ? 'connected' : 'disconnected';
+    
     res.status(200).json({
         status: 'ok',
         environment: process.env.NODE_ENV || 'development',
