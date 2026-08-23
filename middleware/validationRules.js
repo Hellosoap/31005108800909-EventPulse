@@ -100,3 +100,13 @@ exports.eventRegistrationValidation = [
     .notEmpty().withMessage('Please, enter the event ID.')
     .isMongoId().withMessage('The eventId must be a valid Mongo ID.')
 ];
+
+exports.createAnnouncementValidation = [
+    body('eventId')
+        .notEmpty().withMessage('Please, enter the eventId.')
+        .isMongoId().withMessage('The eventId must be a valid Mongo ID.'),
+
+    body('text')
+        .trim()
+        .notEmpty().withMessage('Please, enter the text.')
+];

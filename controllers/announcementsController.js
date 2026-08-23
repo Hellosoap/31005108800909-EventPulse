@@ -6,8 +6,9 @@ const {sendSuccess} = require('../utils/responses');
 
 exports.Announce = asyncHandler(async(req,res,next) => {
     const {eventId, text} = req.body;
-    if (!eventId || !text){
-        return next(new AppError('Please, enter the eventId and text.', 400));
+    const eventExists = await Event.exists({ _id: eventId});
+    if (!eventExists) {
+        return next(new AppError('The event you were trying to make an announcement for was not found', 404));
     }
     const message = await Message.create({
         sender: req.user.userId || req.user._id,
@@ -26,7 +27,7 @@ exports.getAnnouncements = asyncHandler(async (req, res, next) => {
     const {eventId} = req.params;
     const eventExists = await Event.exists({ _id: eventId });
     if (!eventExists) {
-        return next(new AppError('The event you were trying to find messages for was not found.', 404));
+        return next(new AppError('The event you were trying to find messages for was not found', 404));
     }
     const messages = await Message.find({event: eventId})
         .sort({createdAt: 1})

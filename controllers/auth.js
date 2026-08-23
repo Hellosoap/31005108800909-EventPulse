@@ -10,7 +10,7 @@ exports.register = asyncHandler(async(req,res,next) => {
     const {name,email,password} = req.body;
     const existing = await User.findOne({email});
     if(existing){
-        return next(new AppError('The provided email already exists.', 400))
+        return next(new AppError('Email is already registered', 400))
     };
     const hashedPass = await bcrypt.hash(password, 10);
     const user = await User.create({
