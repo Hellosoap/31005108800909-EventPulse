@@ -1,9 +1,9 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 
-// Checks if MONGO_URL exists
-if (!process.env.MONGO_URL) {
-  throw new Error('MONGO_URL is not defined.');
+// Checks if MONGO_URI exists
+if (!process.env.MONGO_URI) {
+  throw new Error('MONGO_URI is not defined.');
 }
 
 // Checks if PORT exists
@@ -13,7 +13,7 @@ if (!process.env.PORT) {
 
 const config = {
   port: process.env.PORT,
-  mongoUrl: process.env.MONGO_URL,
+  mongoUri: process.env.MONGO_URI,
   nodeEnv: process.env.NODE_ENV || 'development',
 };
 

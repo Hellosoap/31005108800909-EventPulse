@@ -31,7 +31,7 @@
 | :--- | :--- | :--- |
 | PORT | Server port | 3000 |
 | NODE_ENV | Environment mode | development |
-| MONGO_URL | MongoDB connection URL | mongodb+cluster_url |
+| MONGO_URI | MongoDB connection URL | mongodb+cluster_url |
 | JWT_SECRET | Secret key for JWT signing | your_jwt_secret_key |
 | JWT_EXPIRES_IN | JWT token expiration duration | 7d |
 
