@@ -69,14 +69,18 @@
 
 | Method | URL | Description |
 | :--- | :--- | :--- |
-| POST | /api/announcements | Post an announcement for an event |
+| POST | /api/announcements | Post an announcement for an event (admin only) |
 | GET | /api/announcements/:eventId | Retrieve all announcements of a specific event |
+
+### HEALTH API
+
+| Method | URL | Description |
+| :--- | :--- | :--- |
+| GET | /health | Check server status and database connection |
 
 
 ### LIVE DEPLOYMENT
 
 *Note: the database might appear disconnected when you first open the live link, wait a few seconds and it will get connected.*
 
-**Live Deployment Link:** event-pulse-jli5yjxq7-high-we-go.vercel.app
-
-**Live Domain:** event-pulse-mauve.vercel.app
+**Live Deployment Link:** event-pulse-mauve.vercel.app
