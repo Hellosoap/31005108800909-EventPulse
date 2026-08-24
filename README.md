@@ -83,4 +83,4 @@
 
 *Note: the database might appear disconnected when you first open the live link, wait a few seconds and it will get connected.*
 
-**Live Deployment Link:** event-pulse-mauve.vercel.app
+**Live Deployment Link:** https://event-pulse-mauve.vercel.app/
