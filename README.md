@@ -77,6 +77,6 @@
 
 *Note: the database might appear disconnected when you first open the live link, wait a few seconds and it will get connected.*
 
-**Live Deployment Link:** event-pulse-jli5yjxq7-high-we-go.vercel.app
+**Live Deployment Link:** event-pulse-ccnpk1rfx-high-we-go.vercel.app
 
 **Live Domain:** event-pulse-mauve.vercel.app
