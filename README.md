@@ -1,6 +1,6 @@
 # EVENTPULSE API
 
-- EventPulse API is a backend service for an event management platform. It handles JWT authentication, event discovery and management, capacity-controlled registrations, and live Socket.io announcements for event attendees.
+- EventPulse API is an advanced backend service for an event management platform. It handles JWT authentication, event discovery and management, capacity-controlled registrations, and live Socket.io announcements for event attendees.
 
 *Tech Stack:*
 
