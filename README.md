@@ -38,6 +38,7 @@
 ## API ENDPOINTS
 
 *Note: If you run all the Postman tests at once, you might get errors.*
+*Note2: socket.io won't work on the live URL, it only works locally.*
 
 ### AUTH API
 
